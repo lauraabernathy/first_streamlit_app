@@ -1,5 +1,5 @@
 import streamlit
-
+import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
@@ -32,7 +32,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
-import snowflake.connector
+
 import requests
 
 fruit_choice = streamlit.text_input('What fruit would you like information about?','kiwi')
