@@ -8,6 +8,11 @@ streamlit.header("The Fruit List Contains:")
 streamlit.dataframe(my_data_rows)
 streamlit.title('My Parents New Healthy Diner')
 
+add_my_fruit = streamlit.text_input('What fruit would you like information about?','jackfruit')
+streamlit.write('The user entered ', fruit_choice)
+import requests
+fruityvice_response2 = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
+
 streamlit.header('Breakfast') 
 streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
 streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
