@@ -1,8 +1,9 @@
 import streamlit
 import pandas
 import reqeusts
-from urllib.error import URLError
 import snowflake.connector
+from urllib.error import URLError
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("Select * from fruit_load_list")
