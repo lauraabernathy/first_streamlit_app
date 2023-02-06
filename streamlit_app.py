@@ -23,8 +23,8 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)
 
-fruityvice_response2 = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
-streamlit.write('Thanks for entering', add_my_fruit)
+#fruityvice_response2 = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
+#streamlit.write('Thanks for entering', add_my_fruit)
 
 def get_fruityvice_data(this_fruit_choice):
    fruityvice_reponse = requests.get("https://fruityvice.com/api/fruit/"+ this_fruit_choice)
