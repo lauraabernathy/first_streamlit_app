@@ -33,7 +33,7 @@ add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfru
 ##fruityvice_response2 = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
 streamlit.write('Thanks for entering', add_my_fruit)
 
-def get_fruity_vice_data(this_fruit_choice):
+def get_fruityvice_data(this_fruit_choice):
    fruityvice_reponse = requests.get("https://fruityvice.com/api/fruit/"+ this_fruit_choice)
    fruityvice_normalized = pandas.json.normalize(fruityvice_response.json())
    return fruityvice_normalized
@@ -47,6 +47,7 @@ try:
    else:
       back_from_function = get_fruityvice_data(fruit_choice)
       streamlit.dataframe(back_from_function)
+      streamlit.dataframe(fruityvice_normalized)
 
 
 except URLError as e:
