@@ -28,7 +28,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 streamlit.dataframe(fruits_to_show)
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
-fruityvice_response2 = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
+##fruityvice_response2 = requests.get("https://fruityvice.com/api/fruit/"+ add_my_fruit)
 streamlit.write('Thanks for entering', add_my_fruit)
 
 
