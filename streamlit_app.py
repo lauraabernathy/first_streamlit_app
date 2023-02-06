@@ -1,5 +1,6 @@
 import streamlit
 import pandas
+import reqeusts
 from urllib.error import URLError
 import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
