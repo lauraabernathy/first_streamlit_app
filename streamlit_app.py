@@ -1,6 +1,13 @@
 import streamlit
 import pandas
 from urllib.error import URLError
+import snowflake.connector
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur = my_cnx.cursor()
+my_cur.execute("Select * from fruit_load_list")
+my_data_rows = my_cur.fetchall()
+streamlit.header("The fruit load list contains:")
+streamlit.dataframe(my_data_rows)
 
 streamlit.title('My Parents New Healthy Diner')
 streamlit.header('Breakfast') 
@@ -26,13 +33,7 @@ my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 streamlit.dataframe(fruits_to_show)
 
-import snowflake.connector
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("Select * from fruit_load_list")
-my_data_rows = my_cur.fetchall()
-streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rows)
+
 ###
 streamlit.header("Fruityvice Fruit Advice!")
 try:
