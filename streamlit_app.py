@@ -5,7 +5,7 @@ import snowflake.connector
 from urllib.error import URLError
 
 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+#my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 
 #streamlit.header("The fruit load list contains:")
