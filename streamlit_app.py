@@ -1,6 +1,5 @@
 import streamlit
 import pandas
-import snowflake.connector
 from urllib.error import URLError
 
 streamlit.title('My Parents New Healthy Diner')
@@ -30,6 +29,7 @@ my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
 
+import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("Select * from fruit_load_list")
